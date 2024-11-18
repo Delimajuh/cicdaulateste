@@ -1,7 +1,7 @@
 name: CiCD Cypress
 
 on: 
-  pull_request
+  pull_request:
     branches: 
       - main
 
@@ -10,18 +10,18 @@ jobs:
     runs-on: ububtu-latest
 
     steps:
-        name: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-        name: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-        name: Install dependencies
-          run: npm install
+      - name: Install dependencies
+        run: npm install
 
-        name: run Cypress Tests
+      - name: run Cypress Tests
         run: npm test
 
   
